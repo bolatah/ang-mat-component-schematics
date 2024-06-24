@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+@use '../../styles.scss' as *;
+
+
+.custom-button {
+  background-color: mat.get-color-from-palette($my-warn-palette, 500);
+  color: map-get(map-get($my-warn-palette, contrast), 500);
+}

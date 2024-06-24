@@ -1,0 +1,56 @@
+/* src/app/app.component.scss */
+
+/* Stile für das Haupt-Host-Element */
+:host {
+   // display: flex;
+
+    height: 100vh; 
+
+  }
+  
+  /* Stile für die Navigationsleiste */
+  app-nav {
+    flex: 0 0 250px; 
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    flex-direction: column;
+  }
+  
+  /* Container für die anderen Komponenten */
+  .main-content {
+   // flex: 1; /* Nimmt den restlichen verfügbaren Platz ein */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 20%;
+    overflow: auto;
+  }
+  
+  /* Einzelne Komponenten, die in einer Reihe nebeneinander stehen */
+  .main-content > * {
+    margin-bottom: 20px; /* Abstand zwischen den Komponenten */
+  }
+  
+  /* Falls es mehr als eine Reihe gibt, stelle sicher, dass sie nebeneinander stehen */
+  @media (min-width: 768px) {
+    .main-content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px; /* Abstand zwischen den Komponenten */
+    }
+  
+    .main-content > * {
+      flex: 1 1 calc(33.33% - 20px); /* Drei Komponenten pro Zeile mit gleichmäßiger Verteilung */
+      min-width: 200px; /* Mindestbreite für die Flex-Kinder */
+    }
+  }
+  
+  /* Sicherstellen, dass die Komponenten ihre eigene Gestaltung haben */
+  app-custom-button, app-address-form, app-table {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
